@@ -16,7 +16,7 @@ cpi_raw <- fredr(
   series_id = "CPIAUCSL",
   observation_start = as.Date("2015-01-01")
 )
-#fixing the gap in CPI for October 2025.
+#fixing the gap in CPI for October 2025 due to government shutdown.
 
 cpi_data <- cpi_raw %>%
   mutate(value = na.approx(value, na.rm = FALSE)) %>%
